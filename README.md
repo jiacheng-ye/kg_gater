@@ -42,7 +42,7 @@ The whole process includes the following steps:
 - **`Build tfidf`**: The `retrievers/build_tfidf.py` script is used to build the index for document retrieval.
 - **`Preprocessing`**: The `preprocess.py` script numericalizes the `train_src.txt`, `train_trg.txt`,`valid_src.txt` and `valid_trg.txt` files, and produces `train.one2many.pt`, `valid.one2many.pt` and `vocab.pt`. 
 - **`Training`**: The `train.py` script loads the `train.one2many.pt`, `valid.one2many.pt` and `vocab.pt` file and performs training. We evaluate the model every 8000 batches on the valid set, and the model will be saved if the valid loss is lower than the previous one.
-- **`Decoding`**: The `predict.py` script loads the trained model and performs decoding on the five test datasets. The prediction file will be saved, which is like `predicted keyphrase one;predicted keyphrase two;…`. For `SetTrans`, we ignore the  $\varnothing$ predictions that represent the meaning of “no corresponding keyphrase”. 
+- **`Decoding`**: The `predict.py` script loads the trained model and performs decoding on the five test datasets. The prediction file will be saved, which is like `predicted keyphrase one;predicted keyphrase two;…`. 
 - **`Evaluation`**: The `evaluate_prediction.py` script loads the ground-truth and predicted keyphrases, and calculates the $F_1@5$ and $F_1@M$ metrics.
 
 For the sake of simplicity, we provide an one-click script in the `script` directory. You can run the following command to run the whole process with `Gater` model:
